@@ -10,8 +10,8 @@ function createSquare(color,classn,divToAppendTo){
 	var square = document.createElement('div');
 	square.style.float = "left";
 	square.style.margin = "1px"
-	square.style.width = colorPalletDiv.clientWidth/2 - 10+'px';
-	square.style.height = colorPalletDiv.clientWidth/2 - 10+ 'px';
+	square.style.width = colorPalletDiv.clientWidth/2 - 20+'px';
+	square.style.height = colorPalletDiv.clientWidth/2 - 20+ 'px';
 	square.style.border = 'solid';
 	square.style.backgroundColor = color;
 	square.className = classn;
@@ -37,11 +37,11 @@ function createColorPallet(){ //done
 }
 
 function createEasel(){
-	for(var l = 0; l < 5; l++){
+	for(var l = 0; l < 49; l++){
 		var currentColor = "green";
-		createSquare(currentColor,'easleDiv', easel)
+		createSquare(currentColor,'easelDiv', easel)
 	}
 }
 
 createColorPallet();
-// createEasel();
+createEasel();
