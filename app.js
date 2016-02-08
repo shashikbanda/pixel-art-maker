@@ -4,20 +4,24 @@ var body = document.getElementsByTagName('body')[0];
 var colorPalletDiv = document.getElementsByClassName('colorpallet')[0];
 var easel = document.getElementsByClassName('easel')[0];
 
-var currentColor = "yellow"
-
-
+var currentColor = "white"
 
 function createSquare(color,classn,divToAppendTo){
 	var square = document.createElement('div');
 	square.style.float = "left";
 	square.style.margin = "1px"
-	square.style.width = colorPalletDiv.clientWidth/2 - 20+'px';
-	square.style.height = colorPalletDiv.clientWidth/2 - 20+ 'px';
+	console.log(divToAppendTo)
+	if(divToAppendTo === 'colorPalletDiv'){
+		square.style.width = colorPalletDiv.clientWidth/2 - 20+'px';
+		square.style.height = colorPalletDiv.clientWidth/2 - 20+ 'px';
+	}
+	else{
+		square.style.width = easel.clientWidth/10 - 20+'px';
+		square.style.height = easel.clientWidth/10 - 20+ 'px';
+	}
 	square.style.border = 'solid';
 	square.style.backgroundColor = color;
 	square.className = classn;
-	console.log(classn + " gh")
 	divToAppendTo.appendChild(square);
 }
 
@@ -40,7 +44,7 @@ function createColorPallet(){ //done
 }
 
 function createEasel(){
-	for(var l = 0; l < 49; l++){
+	for(var l = 0; l < 77; l++){
 		createSquare(currentColor,'easelDiv', easel)
 	}
 }
@@ -53,12 +57,10 @@ var colorL = document.getElementsByClassName('easelDiv');
 console.log(colorL.length)
 
 for(var m=0;m<colorL.length;m++){
-	colorL[m].addEventListener('click',function(event){
+	colorL[m].addEventListener('mouseover',function(event){
 		event.target.style.backgroundColor = currentColor;
 	})
 }
-console.log("current color = " + currentColor)
-
 var palletSq = document.getElementsByClassName('colorPalletDiv');
 
 for(var n=0; n<palletSq.length;n++){
@@ -67,6 +69,3 @@ for(var n=0; n<palletSq.length;n++){
 		console.log(currentColor)
 	})
 }
-
-console.log("current color = " + currentColor)
-
