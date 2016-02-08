@@ -4,6 +4,8 @@ var body = document.getElementsByTagName('body')[0];
 var colorPalletDiv = document.getElementsByClassName('colorpallet')[0];
 var easel = document.getElementsByClassName('easel')[0];
 
+var currentColor = "yellow"
+
 
 
 function createSquare(color,classn,divToAppendTo){
@@ -15,6 +17,7 @@ function createSquare(color,classn,divToAppendTo){
 	square.style.border = 'solid';
 	square.style.backgroundColor = color;
 	square.className = classn;
+	console.log(classn + " gh")
 	divToAppendTo.appendChild(square);
 }
 
@@ -38,10 +41,32 @@ function createColorPallet(){ //done
 
 function createEasel(){
 	for(var l = 0; l < 49; l++){
-		var currentColor = "green";
 		createSquare(currentColor,'easelDiv', easel)
 	}
 }
 
+
 createColorPallet();
 createEasel();
+
+var colorL = document.getElementsByClassName('easelDiv');
+console.log(colorL.length)
+
+for(var m=0;m<colorL.length;m++){
+	colorL[m].addEventListener('click',function(event){
+		event.target.style.backgroundColor = currentColor;
+	})
+}
+console.log("current color = " + currentColor)
+
+var palletSq = document.getElementsByClassName('colorPalletDiv');
+
+for(var n=0; n<palletSq.length;n++){
+	palletSq[n].addEventListener('click', function(event){
+		currentColor = event.target.style.backgroundColor
+		console.log(currentColor)
+	})
+}
+
+console.log("current color = " + currentColor)
+
