@@ -8,18 +8,24 @@ var currentColor = "white"
 
 function createSquare(color,classn,divToAppendTo){
 	var square = document.createElement('div');
+	// console.log(easel)
+	// console.log(colorPalletDiv)
 	square.style.float = "left";
 	square.style.margin = "1px"
 	console.log(divToAppendTo)
-	if(divToAppendTo === 'colorPalletDiv'){
-		square.style.width = colorPalletDiv.clientWidth/2 - 20+'px';
-		square.style.height = colorPalletDiv.clientWidth/2 - 20+ 'px';
+	if(divToAppendTo.className === 'col-md-2 colorpallet'){
+		console.log("sadf")
+		square.style.width = colorPalletDiv.clientWidth/2 - 20 +'px';
+		square.style.height = colorPalletDiv.clientWidth/2 - 20 + 'px';
 	}
 	else{
-		square.style.width = easel.clientWidth/10 - 20+'px';
-		square.style.height = easel.clientWidth/10 - 20+ 'px';
+		square.style.width = easel.clientWidth/30 - 20+'px';
+		square.style.height = easel.clientWidth/30 - 20+ 'px';
 	}
-	square.style.border = 'solid';
+
+	console.log("easel div width = ", easel.clientWidth)
+	console.log("pallet div widrth = ", colorPalletDiv.clientWidth)
+	// square.style.border = 'solid';
 	square.style.backgroundColor = color;
 	square.className = classn;
 	divToAppendTo.appendChild(square);
@@ -44,10 +50,16 @@ function createColorPallet(){ //done
 }
 
 function createEasel(){
-	for(var l = 0; l < 77; l++){
+	for(var l = 0; l < 2470; l++){
 		createSquare(currentColor,'easelDiv', easel)
 	}
 }
+
+$(function() {
+  $('#main-title').fadeIn( "slow", function() {
+  	console.log("jquery fade in success")
+  })
+});
 
 
 createColorPallet();
