@@ -50,7 +50,7 @@ function createColorPallet(){ //done
 }
 
 function createEasel(){
-	for(var l = 0; l < 2470; l++){
+	for(var l = 0; l < 100; l++){ //2470 to fill grid
 		createSquare(currentColor,'easelDiv', easel)
 	}
 }
@@ -81,3 +81,15 @@ for(var n=0; n<palletSq.length;n++){
 		console.log(currentColor)
 	})
 }
+
+
+var resetButton = document.getElementById('reset-button');
+
+resetButton.addEventListener('click',function(){
+
+	for(var o=0; o < colorL.length; o++){
+		console.log("asdf")
+		console.log(colorL[o])
+		colorL[o].style.backgroundColor = "white"
+	}
+})
