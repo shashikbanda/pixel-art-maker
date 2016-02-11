@@ -6,8 +6,6 @@ var currentColor = "white"
 
 function createSquare(color,classn,divToAppendTo){ //GENERAL FUNCTION TO CREATE SQUARE
 	var square = document.createElement('div');
-	// console.log(easel)
-	// console.log(colorPalletDiv)
 	square.style.float = "left";
 	square.style.margin = "1px";
 	if(divToAppendTo.className === 'col-md-2 colorpallet'){
@@ -15,8 +13,8 @@ function createSquare(color,classn,divToAppendTo){ //GENERAL FUNCTION TO CREATE 
 		square.style.height = colorPalletDiv.clientWidth/2 - 20 + 'px';
 	}
 	else{
-		square.style.width = easel.clientWidth/30 - 20+'px';
-		square.style.height = easel.clientWidth/30 - 20+ 'px';
+		square.style.width = easel.clientWidth/25 - 20+'px';
+		square.style.height = easel.clientWidth/25 - 20+ 'px';
 	}
 	square.style.backgroundColor = color;
 	square.className = classn;
@@ -42,7 +40,7 @@ function createColorPallet(){ //FUNCTION TO CREATE COLOR PALLET WITH 14 SQUARES
 }
 
 function createEasel(){ //FUNCTION TO CREATE EASEL WITH 100 SQUARES
-	for(var l = 0; l < 100; l++){ //2470 to fill grid
+	for(var l = 0; l < 1035; l++){ //2470 to fill grid
 		createSquare(currentColor,'easelDiv', easel)
 	}
 }
