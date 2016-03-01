@@ -40,7 +40,7 @@ function createColorPallet(){ //FUNCTION TO CREATE COLOR PALLET WITH 14 SQUARES
 }
 
 function createEasel(){ //FUNCTION TO CREATE EASEL WITH 100 SQUARES
-	for(var l = 0; l < 1035; l++){ //2470 to fill grid
+	for(var l = 0; l < 1200; l++){ //2470 to fill grid
 		createSquare(currentColor,'easelDiv', easel)
 	}
 }

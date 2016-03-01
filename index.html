@@ -4,6 +4,7 @@
 	<title>Pixel Art Maker Refactor</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
@@ -11,29 +12,26 @@
 	<script src="jquery-1.12.0.min.js"></script>
 </head>
 <body>
+
 <div class="container">
-	<div class="row">
-		<div class="col-md-12" id="main-title"><h1>Pixel Art Maker </h1></div>
-	</div>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Pixel Art Maker</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li><a href="#">Save</a></li>
+	      <li><a href="#">Reset</a></li> 
+	      <li><a href="#">TDB</a></li> 
+	    </ul>
+	  </div>
+	</nav>
 </div>
 <div class="container">
 	<div class="row">
 		<div class="col-md-2 colorpallet">
 		</div>
 		<div class="col-md-10 easel" style="border:solid">
-		</div>
-	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-4">
-			<button type="button" class="btn btn-success center-block" id='save-button'>Save</button>
-		</div>
-		<div class="col-md-4">
-			<button type="button" class="btn btn-danger center-block" id="reset-button">Reset</button>
-		</div>
-		<div class="col-md-4 ">
-			<button type="button" class="btn btn-info center-block" id="info-button">Current</button>
 		</div>
 	</div>
 </div>
